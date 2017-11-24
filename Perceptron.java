@@ -12,20 +12,20 @@ public class Perceptron {
 		/*valores inicias da matriz = dados de entrada da porta logica and*/  
 	    this.input_data[0][0] = 0; 
 	    this.input_data[0][1] = 0;
-	    this.input_data[0][2] = 0; // valor de saida esperado
+	    this.input_data[0][2] = 0; // valor de output esperado
 
 	    this.input_data[1][0] = 0;
 	    this.input_data[1][1] = 1;
-	    this.input_data[1][2] = 0; // valor de saida esperado
+	    this.input_data[1][2] = 0; // valor de output esperado
 
 	    this.input_data[2][0] = 1; 
 	    this.input_data[2][1] = 0; 
-	    this.input_data[2][2] = 0; // valor de saida esperado
+	    this.input_data[2][2] = 0; // valor de output esperado
 
 	   
 	    this.input_data[3][0] = 1; 
 	    this.input_data[3][1] = 1; 
-	    this.input_data[3][2] = 1;// valor de saida esperado
+	    this.input_data[3][2] = 1;// valor de output esperado
 
 	    weight[0] = 0;
 	    weight[1] = 0;
@@ -48,12 +48,12 @@ public class Perceptron {
 	    public void trainning() {
 
 	        boolean trained= true;
-	        int saida;
+	        int output;
 
 	        for (int i = 0; i < 4; i++) {
-	            saida = activation(input_data[i][0], input_data[i][1]);
-	            if (saida != input_data[i][2]) { 
-	                weightUpdate(i, saida);
+	            output = activation(input_data[i][0], input_data[i][1]);
+	            if (output != input_data[i][2]) { 
+	                weightUpdate(i, output);
 	                trained = false;
 	            }
 	        }
@@ -65,11 +65,11 @@ public class Perceptron {
 
 	    }    
 	    // Atualizacao de valores dos pesos
-	    void weightUpdate(int i, int saida) {
+	    void weightUpdate(int i, int output) {
 
-	    	weight[0] = weight[0] + ((input_data[i][2] - saida) * input_data[i][0]*learning_rate);
-	    	weight[1] = weight[1] + ( (input_data[i][2] - saida) * input_data[i][1]*learning_rate);
-	    	weight[2] = weight[2] + ( (input_data[i][2] - saida)*learning_rate);
+	    	weight[0] = weight[0] + ((input_data[i][2] - output) * input_data[i][0]*learning_rate);
+	    	weight[1] = weight[1] + ( (input_data[i][2] - output) * input_data[i][1]*learning_rate);
+	    	weight[2] = weight[2] + ( (input_data[i][2] - output)*learning_rate);
 
 	    }
 
