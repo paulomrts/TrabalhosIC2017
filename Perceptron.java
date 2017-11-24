@@ -1,8 +1,7 @@
 
 public class Perceptron {
 		
-		int[][] input_data = new int[4][3];
-
+	    int[][] input_data = new int[4][3];
 	    double[] weight = new double[3]; 
 	    double theta = 0;
 	    int max_int = 1000;
@@ -76,7 +75,7 @@ public class Perceptron {
 
 	    void print() {
 
-	    		System.out.println( "==== AND Logical Gate ===");
+	    	System.out.println( "==== AND Logical Gate ===");
 	        System.out.println("0 e 0 = " + activation(0, 0));
 	        System.out.println("0 e 1 = " + activation(0, 1));
 	        System.out.println("1 e 0 = " + activation(1, 0));
